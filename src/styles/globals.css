@@ -1,0 +1,230 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ═══════════════════════════════════════════════════════════════════════════════
+   BOLD GRADIENT STYLE - 3D EFFECTS & GLOWS
+   ═══════════════════════════════════════════════════════════════════════════════
+   Dark gradient backgrounds, glow effects, orbital animations
+*/
+
+@layer base {
+  /* Smooth scroll behavior */
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Dark mode (default) - gradient background */
+  html {
+    color-scheme: dark;
+  }
+
+  body {
+    @apply bg-apple-bg text-apple-text antialiased;
+    font-feature-settings: 'kern' 1;
+    text-rendering: optimizeLegibility;
+    letter-spacing: -0.01em;
+    background: linear-gradient(135deg, #1a0a1f 0%, #2d1b35 50%, #3d2645 100%);
+    background-attachment: fixed;
+    cursor: none;
+    overflow-x: hidden;
+  }
+
+  /* Mobile-friendly cursor */
+  @media (hover: none) and (pointer: coarse) {
+    body {
+      cursor: auto;
+    }
+  }
+
+/* Scrollbar styling for chat */
+.scrollbar-thin::-webkit-scrollbar {
+  width: 6px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+  a, button, input, textarea, select {
+    cursor: none !important;
+  }
+
+  /* Dark mode explicit */
+  html.dark body {
+    @apply bg-apple-dark-bg text-apple-dark-text;
+    background: linear-gradient(135deg, #000000 0%, #0a0118 50%, #1a0f2e 100%);
+    background-attachment: fixed;
+  }
+
+  /* Custom selection - Magenta glow */
+  ::selection {
+    @apply bg-gradient-magenta/30 text-white;
+  }
+
+  /* Focus visible - Purple glow ring */
+  *:focus-visible {
+    @apply outline-2 outline-offset-2 outline-gradient-purple rounded-lg;
+    box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.3);
+  }
+
+  /* Headings - Bold glow typography */
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold;
+    letter-spacing: -0.02em;
+    text-shadow: 0 0 30px rgba(236, 72, 153, 0.3);
+  }
+}
+
+@layer utilities {
+  /* Apple-style scrollbar */
+  .apple-scrollbar::-webkit-scrollbar {
+    width: 12px;
+  }
+
+  .apple-scrollbar::-webkit-scrollbar-track {
+    @apply bg-apple-bg-secondary;
+  }
+
+  html.dark .apple-scrollbar::-webkit-scrollbar-track {
+    @apply bg-apple-dark-bg-secondary;
+  }
+
+  .apple-scrollbar::-webkit-scrollbar-thumb {
+    @apply bg-apple-text-tertiary/30 rounded-full;
+  }
+
+  .apple-scrollbar::-webkit-scrollbar-thumb:hover {
+    @apply bg-apple-text-tertiary/50;
+  }
+
+  /* Apply to body */
+  body {
+    @apply apple-scrollbar;
+  }
+
+  /* Glassmorphic cards with glow */
+  .apple-glass {
+    @apply bg-gradient-purple/10 backdrop-blur-xl border border-gradient-purple/30;
+    box-shadow: 0 8px 32px rgba(245, 163, 208, 0.1), inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+  }
+
+  /* Ultra Glass - Year 3000 Style */
+  .ultra-glass {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(40px) saturate(200%) brightness(120%);
+    -webkit-backdrop-filter: blur(40px) saturate(200%) brightness(120%);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 
+      0 8px 32px 0 rgba(31, 38, 135, 0.37),
+      inset 0 0 20px rgba(255, 255, 255, 0.05);
+  }
+
+  /* Bold gradient card */
+  .apple-card {
+    @apply bg-gradient-to-br from-apple-bg-elevated/80 to-apple-bg-secondary/60 backdrop-blur-lg rounded-2xl border border-gradient-purple/20;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), 0 0 60px rgba(192, 38, 211, 0.1);
+    transition: all 0.3s ease;
+  }
+
+  .apple-card:hover {
+    box-shadow: 0 12px 48px rgba(0, 0, 0, 0.5), 0 0 80px rgba(245, 163, 208, 0.2);
+    border-color: rgba(245, 163, 208, 0.4);
+  }
+
+  /* Gradient link with glow */
+  .apple-link {
+    @apply text-transparent bg-clip-text bg-gradient-to-r from-gradient-pink to-gradient-magenta hover:from-gradient-purple hover:to-gradient-pink;
+    transition: all 0.3s ease;
+  }
+
+  /* Bold gradient text with glow */
+  .apple-gradient-text {
+    @apply bg-gradient-to-r from-gradient-pink via-gradient-magenta to-gradient-purple bg-clip-text text-transparent;
+    filter: drop-shadow(0 0 20px rgba(236, 72, 153, 0.5));
+  }
+
+  /* Text glow utility */
+  .text-glow {
+    text-shadow: 0 0 30px rgba(245, 163, 208, 0.6), 0 0 60px rgba(245, 163, 208, 0.3);
+  }
+
+  /* Orbital ring */
+  .orbital-ring {
+    position: absolute;
+    border-radius: 50%;
+    border: 2px solid;
+    border-color: rgba(192, 38, 211, 0.3) rgba(245, 163, 208, 0.3) rgba(217, 70, 239, 0.3) rgba(236, 72, 153, 0.3);
+    animation: orbit 20s linear infinite;
+  }
+
+  /* Neon glow effects */
+  .neon-cyan {
+    box-shadow: 
+      0 0 5px #00ffff,
+      0 0 10px #00ffff,
+      0 0 20px #00ffff,
+      0 0 40px #00ffff;
+  }
+
+  .neon-magenta {
+    box-shadow: 
+      0 0 5px #ff00ff,
+      0 0 10px #ff00ff,
+      0 0 20px #ff00ff,
+      0 0 40px #ff00ff;
+  }
+
+  .neon-border {
+    border: 1px solid;
+    border-image: linear-gradient(135deg, #00ffff, #ff00ff, #ffff00, #00ffff) 1;
+    box-shadow: 
+      inset 0 0 10px rgba(0, 255, 255, 0.5),
+      0 0 20px rgba(255, 0, 255, 0.5);
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════════
+   REDUCED MOTION - Accessibility First (Apple Standard)
+   ═══════════════════════════════════════════════════════════════════════════════
+*/
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════════
+   PRINT STYLES
+   ═══════════════════════════════════════════════════════════════════════════════
+*/
+@media print {
+  * {
+    background: white !important;
+    color: black !important;
+  }
+  
+  nav,
+  footer,
+  button {
+    display: none !important;
+  }
+}

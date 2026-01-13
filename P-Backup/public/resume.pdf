@@ -1,0 +1,67 @@
+<!-- 
+  ═══════════════════════════════════════════════════════════════════════════════
+  PLACEHOLDER RESUME
+  ═══════════════════════════════════════════════════════════════════════════════
+  
+  IMPORTANT: Replace this file with your actual resume PDF!
+  
+  This HTML file is just a placeholder. To add your real resume:
+  
+  1. Export your resume as a PDF file
+  2. Name it "resume.pdf"
+  3. Replace this file in the /public/ folder
+  4. The "Download CV" button will automatically link to it
+  
+  ═══════════════════════════════════════════════════════════════════════════════
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resume Placeholder</title>
+  <style>
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      max-width: 800px;
+      margin: 50px auto;
+      padding: 20px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      text-align: center;
+    }
+    .container {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 40px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    h1 { font-size: 2.5rem; margin-bottom: 20px; }
+    p { font-size: 1.2rem; line-height: 1.8; }
+    code {
+      background: rgba(0, 0, 0, 0.3);
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-family: monospace;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>📄 Resume Placeholder</h1>
+    <p>
+      This is a placeholder file. Please replace <code>public/resume.pdf</code> 
+      with your actual resume PDF.
+    </p>
+    <p>
+      Once you add your real resume, the "Download CV" button on your portfolio 
+      will download it automatically.
+    </p>
+    <p style="margin-top: 30px; opacity: 0.7; font-size: 0.9rem;">
+      💡 Tip: Export your resume from Word/Google Docs as PDF and place it here!
+    </p>
+  </div>
+</body>
+</html>
