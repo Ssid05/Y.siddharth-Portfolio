@@ -127,7 +127,7 @@ export const Hero = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="text-base sm:text-lg apple-gradient-text mb-12 font-normal"
+          className="text-base sm:text-lg text-white mb-12 font-normal"
         >
           {personal.tagline}
         </motion.p>
